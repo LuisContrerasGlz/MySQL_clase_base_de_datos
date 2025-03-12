@@ -1,7 +1,5 @@
 -- MIN, MAX, COUNT, SUM, AVG, ALIAS, CONCAT, UPPER, LOWER
 
--- Ejemplos Clase
-
 -- En este caso, se muestra el pago más pequeño registrado en la tabla payment.
 
 SELECT MIN(amount) FROM payment;
