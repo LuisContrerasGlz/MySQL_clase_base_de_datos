@@ -151,7 +151,80 @@ FROM productos p
 RIGHT JOIN productos_categorias pc ON p.producto_id = pc.producto_id
 RIGHT JOIN categorias c ON pc.categoria_id = c.categoria_id;
 
+-- JOINS
 
+USE sakila;
+/*
+Listar los pagos realizados por cada cliente con su nombre
+Esto devuelve solo los clientes que han realizado pagos.
+*/
+
+SELECT customer_id, first_name, last_name FROM customer;
+SELECT * from customer;
+
+SELECT * FROM payment;
+SELECT amount from payment;
+
+SELECT c.customer_id, c.first_name, c.last_name, p.amount
+FROM customer c
+INNER JOIN payment p ON c.customer_id = p.customer_id;
+
+SELECT c.customer_id, c.first_name, c.last_name, p.amount
+FROM customer c
+JOIN payment p ON c.customer_id = p.customer_id;
+
+/*
+Listar todos los clientes y sus pagos (incluso si no han pagado nada)
+Muestra todos los clientes, y en caso de que no tengan pagos, el campo amount aparecerá como NULL.
+*/
+
+SELECT c.customer_id, c.first_name, c.last_name, p.amount
+FROM customer c
+LEFT JOIN payment p ON c.customer_id = p.customer_id;
+
+/*
+
+Listar todos los pagos realizados y sus clientes, 
+incluyendo pagos que no estén asociados a ningún cliente 
+(poco probable en Sakila, pero válido para ilustrar el concepto).
+
+Devuelve todos los pagos y muestra los datos de los clientes cuando existan. 
+Si algún pago no tiene cliente (raro pero posible), mostrará NULL en los campos del cliente.
+
+*/
+
+SELECT c.customer_id, c.first_name, p.amount
+FROM customer c
+RIGHT JOIN payment p ON c.customer_id = p.customer_id;
+
+
+-- Clientes que no han realizado ningún pago
+SELECT c.customer_id, c.first_name
+FROM customer c
+LEFT JOIN payment p ON c.customer_id = p.customer_id
+WHERE p.payment_id IS NULL;
+
+-- UNION
+
+-- Mostrar todos los nombres de clientes y nombres de actores (ambos son personas) en una sola lista.
+
+SELECT first_name FROM customer
+UNION
+SELECT first_name FROM actor;
+
+SELECT first_name, last_name FROM customer
+UNION
+SELECT first_name, last_name FROM actor;
+
+-- UNION ALL
+
+SELECT first_name, last_name FROM customer
+UNION ALL
+SELECT first_name, last_name FROM actor;
+
+SELECT first_name, last_name FROM customer
+UNION ALL
+SELECT first_name, last_name FROM actor;
 
 
 
