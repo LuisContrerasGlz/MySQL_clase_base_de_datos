@@ -1,7 +1,8 @@
 # Proyecto clase de Bases de Datos Relacionales con MySQL
 
 ## Descripción
-Este proyecto forma parte de una clase de bases de datos relacionales y tiene como objetivo aprender y practicar consultas SQL utilizando la base de datos **Sakila**. A lo largo del proyecto, se explorarán diversas operaciones sobre una base de datos relacional, incluyendo la creación de tablas, inserción de datos, consultas simples y avanzadas, y el uso de funciones en SQL.
+Este proyecto forma parte de una clase de bases de datos relacionales y tiene como objetivo aprender y practicar consultas SQL utilizando la base de datos **Sakila**. 
+A lo largo del proyecto, se explorarán diversas operaciones sobre una base de datos relacional, incluyendo la creación de tablas, inserción de datos, consultas simples y avanzadas, y el uso de funciones en SQL, Vistas, Procedimientos Almacenados, Triggers.
 
 Para algunos ejemplos se hicieron otras bases de datos de ejemplo para las cuales el codigo de creates e inserts esta dentro de los mismos archivos de codigo para su ejecucion.
 
